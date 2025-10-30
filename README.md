@@ -1,6 +1,7 @@
 🎓 Student Performance Tracker
 
-Aplikasi sederhana untuk melacak dan merekap penilaian mahasiswa. Proyek ini dirancang dengan modular sehingga mudah dikembangkan dan dipelihara.
+Aplikasi sederhana untuk melacak dan merekap penilaian mahasiswa.
+Proyek ini dirancang secara modular sehingga mudah dikembangkan dan dipelihara.
 
 📂 Struktur Direktori
 student_performance_tracker/
@@ -8,49 +9,69 @@ student_performance_tracker/
 ├── app.py
 ├── requirements.txt
 ├── out/
-│ └── report.md
-│ └── report.html
+│   ├── report.md
+│   └── report.html
 └── tracker/
-├── **init**.py
-├── **main**.py
-├── mahasiswa.py
-├── penilaian.py
-├── rekap_kelas.py
-└── report.py
+    ├── __init__.py
+    ├── __main__.py
+    ├── mahasiswa.py
+    ├── penilaian.py
+    ├── rekap_kelas.py
+    └── report.py
 
-Folder seperti .venv/ dan **pycache**/ adalah artefak environment dan tidak perlu dimasukkan ke repository.
+
+Folder seperti .venv/ dan __pycache__/ adalah file lingkungan kerja dan tidak perlu di-push ke repository.
 
 🧠 Deskripsi Modul
-File Deskripsi
-app.py Entry point aplikasi tingkat atas. Mengatur alur program dari input data hingga pembuatan laporan.
-tracker/**main**.py Entry point alternatif (python -m tracker) yang mengikat semua komponen utama.
-tracker/mahasiswa.py Kelas representasi mahasiswa (misal: NIM, nama, metode tampilan data).
-tracker/penilaian.py Logika penilaian seperti nilai per mata kuliah, validasi, bobot nilai, dll.
-tracker/rekap_kelas.py Rekap hasil kelas: rata-rata, jumlah lulus/gagal, statistik nilai.
-tracker/report.py Membuat laporan akhir (misal: Markdown) dan menyimpan ke folder out/.
-out/report.md Contoh output laporan yang dihasilkan program.
-requirements.txt Daftar dependensi Python proyek.
+File	Deskripsi
+app.py	Entry point utama aplikasi. Mengelola alur input → proses → pembuatan laporan
+tracker/__main__.py	Entry alternatif (python -m tracker)
+tracker/mahasiswa.py	Kelas representasi data mahasiswa (NIM, nama, dll)
+tracker/penilaian.py	Logika penilaian (nilai mata kuliah, bobot, validasi)
+tracker/rekap_kelas.py	Rekap kelas: rata-rata, jumlah lulus/gagal, statistik
+tracker/report.py	Membuat dan menyimpan laporan (Markdown/HTML)
+out/report.md	Contoh output laporan yang dihasilkan program
+requirements.txt	Daftar dependensi Python proyek
 🚀 Cara Menjalankan
-1️⃣ Buat dan aktifkan virtual environment
+1️⃣ Buat & aktifkan Virtual Environment
 python -m venv .venv
 
-# Linux / macOS
 
-source .venv/bin/activate
-
-# Windows
+Windows
 
 .venv\Scripts\activate
 
-2️⃣ Instal dependensi
-pip install -r student_performance_tracker/requirements.txt
 
-3️⃣ Jalankan aplikasi
+Linux / macOS
 
-# Via file utama
+source .venv/bin/activate
 
-python student_performance_tracker/app.py
+2️⃣ Install dependensi
+pip install -r requirements.txt
 
-# atau via module launcher
+3️⃣ Jalankan Program
+▶️ Via file utama
+python app.py
 
-python -m student_performance_tracker.tracker
+▶️ Via module launcher
+python -m tracker
+
+📄 Output Laporan
+
+Laporan otomatis tersimpan di folder out/ dalam format:
+
+.md (Markdown)
+
+.html (bisa dibuka di browser)
+
+🏗️ Status Proyek
+
+✅ Struktur modular
+✅ Output laporan
+🔜 GUI/web interface (opsional pengembangan ke depan)
+
+✨ Catatan
+
+Pastikan Python 3.10 atau lebih baru
+
+Gunakan gitignore untuk mengabaikan .venv/ & __pycache__/
